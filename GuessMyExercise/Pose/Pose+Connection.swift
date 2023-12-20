@@ -1,3 +1,4 @@
+
 /*
 See LICENSE folder for this sample’s licensing information.
 
@@ -7,6 +8,7 @@ A `Connection` defines the line between two landmarks.
 */
 
 import UIKit
+import Vision
 
 extension Pose {
     /// Represents a line between two landmarks.
@@ -79,29 +81,35 @@ extension Pose {
 }
 
 extension Pose {
-    /// A series of joint pairs that define the wireframe lines of a pose.
-    static let jointPairs: [(joint1: JointName, joint2: JointName)] = [
-        // The left arm's connections.
-        (.leftShoulder, .leftElbow),
-        (.leftElbow, .leftWrist),
+    static let jointPairs: [(joint1: VNHumanHandPoseObservation.JointName, joint2: VNHumanHandPoseObservation.JointName)] = [
+        // Thumb
+        (.wrist, .thumbCMC),
+        (.thumbCMC, .thumbMP),
+        (.thumbMP, .thumbIP),
+        (.thumbIP, .thumbTip),
 
-        // The left leg's connections.
-        (.leftHip, .leftKnee),
-        (.leftKnee, .leftAnkle),
+        // Index Finger
+        (.wrist, .indexMCP),
+        (.indexMCP, .indexPIP),
+        (.indexPIP, .indexDIP),
+        (.indexDIP, .indexTip),
 
-        // The right arm's connections.
-        (.rightShoulder, .rightElbow),
-        (.rightElbow, .rightWrist),
+        // Middle Finger
+        (.wrist, .middleMCP),
+        (.middleMCP, .middlePIP),
+        (.middlePIP, .middleDIP),
+        (.middleDIP, .middleTip),
 
-        // The right leg's connections.
-        (.rightHip, .rightKnee),
-        (.rightKnee, .rightAnkle),
+        // Ring Finger
+        (.wrist, .ringMCP),
+        (.ringMCP, .ringPIP),
+        (.ringPIP, .ringDIP),
+        (.ringDIP, .ringTip),
 
-        // The torso's connections.
-        (.leftShoulder, .neck),
-        (.rightShoulder, .neck),
-        (.leftShoulder, .leftHip),
-        (.rightShoulder, .rightHip),
-        (.leftHip, .rightHip)
+        // Little Finger
+        (.wrist, .littleMCP),
+        (.littleMCP, .littlePIP),
+        (.littlePIP, .littleDIP),
+        (.littleDIP, .littleTip)
     ]
 }

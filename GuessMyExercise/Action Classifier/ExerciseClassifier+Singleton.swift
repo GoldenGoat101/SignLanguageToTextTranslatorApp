@@ -9,21 +9,21 @@ Creates a common instance of the Exercise Classifier.
 
 import CoreML
 
-extension ExerciseClassifier {
+extension ssss_1 {
     /// Creates a shared Exercise Classifier instance for the app at launch.
-    static let shared: ExerciseClassifier = {
+    static let shared: ssss_1 = {
         // Use a default model configuration.
         let defaultConfig = MLModelConfiguration()
 
         // Create an Exercise Classifier instance.
-        guard let exerciseClassifier = try? ExerciseClassifier(configuration: defaultConfig) else {
+        guard let ssss_1 = try? ssss_1(configuration: defaultConfig) else {
             // The app requires the action classifier to function.
             fatalError("Exercise Classifier failed to initialize.")
         }
 
         // Ensure the Exercise Classifier.Label cases match the model's classes.
-        exerciseClassifier.checkLabels()
+        ssss_1.checkLabels()
 
-        return exerciseClassifier
+        return ssss_1
     }()
 }

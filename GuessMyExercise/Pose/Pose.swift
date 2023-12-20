@@ -9,7 +9,7 @@ A `Pose` is a collection of "landmarks" and connections between select landmarks
 import UIKit
 import Vision
 
-typealias Observation = VNHumanBodyPoseObservation
+typealias Observation = VNHumanHandPoseObservation
 /// Stores the landmarks and connections of a human body pose and draws them as
 /// a wireframe.
 /// - Tag: Pose
@@ -40,10 +40,6 @@ struct Pose {
     init?(_ observation: Observation) {
         // Create a landmark for each joint in the observation.
         landmarks = observation.availableJointNames.compactMap { jointName in
-            guard jointName != JointName.root else {
-                return nil
-            }
-
             guard let point = try? observation.recognizedPoint(jointName) else {
                 return nil
             }
@@ -53,13 +49,8 @@ struct Pose {
 
         guard !landmarks.isEmpty else { return nil }
 
-        //
         area = Pose.areaEstimateOfLandmarks(landmarks)
-
-        // Save the multiarray from the observation.
         multiArray = try? observation.keypointsMultiArray()
-
-        // Build a list of connections from the pose's landmarks.
         buildConnections()
     }
 

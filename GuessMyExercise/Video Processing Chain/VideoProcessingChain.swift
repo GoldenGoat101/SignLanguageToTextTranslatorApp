@@ -59,10 +59,10 @@ struct VideoProcessingChain {
     /// The video-processing chain reuses this instance for all frames from any
     /// upstream publisher.
     /// - Tag: humanBodyPoseRequest
-    private let humanBodyPoseRequest = VNDetectHumanBodyPoseRequest()
+    private let humanBodyPoseRequest = VNDetectHumanHandPoseRequest()
 
     /// The action classifier that recognizes exercise activities.
-    private let actionClassifier = ExerciseClassifier.shared
+    private let actionClassifier = ssss_1.shared
 
     /// The number of pose data instances the action classifier needs
     /// to make a prediction.
@@ -209,6 +209,7 @@ extension VideoProcessingChain {
 
         return poses
     }
+
 
     /// Returns the largest pose by area.
     /// - Parameter poses: A `Pose` array optional.

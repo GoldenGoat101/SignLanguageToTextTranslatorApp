@@ -12,7 +12,7 @@ import UIKit
 import Vision
 
 extension Pose {
-    typealias JointName = VNHumanBodyPoseObservation.JointName
+    typealias JointName = VNHumanHandPoseObservation.JointName
 
     /// The name and location of a point of interest on a human body.
     ///

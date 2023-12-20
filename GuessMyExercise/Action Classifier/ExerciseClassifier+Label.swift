@@ -5,12 +5,15 @@ Abstract:
 Defines the app's knowledge of the model's class labels.
 */
 
-extension ExerciseClassifier {
+extension ssss_1 {
     /// Represents the app's knowledge of the Exercise Classifier model's labels.
     enum Label: String, CaseIterable {
-        case lunges = "Lunges"
-        case burpees = "Burpees"
-        case jumpingJacks = "Jumping Jacks"
+        case banana = "banana"
+        case africa = "africa"
+        case argue = "argue"
+        case backpack = "backpack"
+        case baby = "baby"
+        case bar = "bar"
 
         /// A negative class that represents irrelevant actions.
         case otherAction = "Other Action"
