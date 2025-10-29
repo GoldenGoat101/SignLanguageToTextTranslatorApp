@@ -1,11 +1,11 @@
-# Detecting Human Actions in a Live Video Feed
+# Detecting ASL Signs in a Live Video Feed
 
-Identify body movements by sending a person's pose data from a series
+Identify body movements by sending a person's hand pose data from a series
 of video frames to an action-classification model.
 
 ## Overview
 
-This sample app recognizes a person's body moves, called *actions*,
+This app recognizes a person's hand signs, called *actions*,
 by analyzing a series of video frames with [Vision][Vision]
 and predicting the name of the movement by applying an action classifier.
 The action classifier in this sample recognizes three exercises:
