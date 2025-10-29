@@ -6,7 +6,7 @@ Defines the app's knowledge of the model's class labels.
 */
 
 extension ssss_1 {
-    /// Represents the app's knowledge of the Exercise Classifier model's labels.
+    /// Represents the app's knowledge of the ASL Sign Classifier model's labels.
     enum Label: String, CaseIterable {
         case banana = "banana"
         case africa = "africa"
